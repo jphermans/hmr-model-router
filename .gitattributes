@@ -1,0 +1,14 @@
+# End of line handling
+* text=auto eol=lf
+
+# Ensure scripts are marked as executable in git
+hermes-model-router text eol=lf
+hermes-auto text eol=lf
+model_router.py text eol=lf
+show_openrouter_models.py text eol=lf
+
+# Markdown files
+*.md text eol=lf
+
+# Python files
+*.py text eol=lf

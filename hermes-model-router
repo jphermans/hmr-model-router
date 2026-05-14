@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# hermes-model-router - Automatically select the right OpenRouter model for your task
+#
+# Usage:
+#   hermes-model-router "your task here"           # Run and auto-select model
+#   hermes-model-router -i                          # Interactive mode
+#   echo "task" | hermes-model-router              # Pipe from stdin
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Default to non-interactive if not a TTY
+if [ ! -t 0 ]; then
+    HERMES_ROUTER_RUN=1
+fi
+
+# Run the Python router
+python3 "$SCRIPT_DIR/model_router.py" "$@"

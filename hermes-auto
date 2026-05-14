@@ -1,0 +1,11 @@
+#!/bin/bash
+# hermes-auto - Run Hermes with automatic model selection (auto-executes)
+# This is a convenience wrapper that routes tasks to optimal OpenRouter models
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Export to enable auto-run
+export HERMES_ROUTER_RUN=1
+
+# Run the router with all arguments
+"$SCRIPT_DIR/hermes-model-router" "$@"
