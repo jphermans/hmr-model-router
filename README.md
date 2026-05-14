@@ -15,35 +15,23 @@
 
 ## 🎯 What This Does
 
-Smartly routes your Hermes Agent tasks to the **right OpenRouter model** based on task type and complexity:
+Smartly routes your Hermes Agent tasks to the **right model** - focused on **excellent quality at 50-90% LESS cost** than premium models!
 
-| Task Type | Recommended Model | Benefit |
-|-----------|------------------|---------|
-| 📝 **Simple Queries** | `qwen3.5-flash` | Fast & cheap (40-70% cost savings) |
-| 💻 **Coding Tasks** | `claude-3.5-sonnet` | Best for programming & debugging |
-| 📊 **Analysis/Data** | `deepseek-chat` | Strong reasoning & math |
-| ✍️ **Creative Writing** | `mistral-large` | Expressive & natural |
-| 🧠 **Complex Reasoning** | `claude-sonnet-4` | Maximum capability |
-| 📚 **General Tasks** | `qwen3.5-235b` | Balanced quality & cost |
+| Task Type | Recommended Model | Cost (vs Claude) | Benefit |
+|-----------|------------------|------------------|---------|
+| 📝 **Simple Queries** | `microsoft/phi-3.5` | ~$0.02 | Ultra cheap! 🤑 |
+| 💻 **Coding Tasks** | `qwen2.5-coder-32b` | ~$0.18 | Near-GPT-4 quality, 90% cheaper! |
+| 📊 **Analysis/Data** | `deepseek/deepseek-chat` | ~$0.27 | Amazing reasoning! 🌟 |
+| ✍️ **Creative Writing** | `mistral-nemo-2407` | ~$0.15 | Great writing, super affordable! |
+| 🧠 **Complex Reasoning** | `qwen2.5-72b` | ~$0.55 | 50% cheaper than Claude |
+| 📚 **General Tasks** | `qwen2.5-72b` | ~$0.55 | Best value overall! |
 
-### Before vs After
-
-**Before (Manual Selection):**
-```bash
-# Every task uses the same model
-hermes chat "What's 2+2?"           # Wastes expensive compute
-hermes chat "Build a production API" # Might not have right capability
-```
-
-**After (Automatic Routing):**
-```bash
-# Right model for each job
-hermes-router "What's the capital of France?"
-# → qwen3.5-flash (simple fact, fast/cheap)
-
-hermes-router "Build a FastAPI REST API"
-# → claude-3.5-sonnet (coding model, optimal quality)
-```
+### Why These Models? 🚀
+- ✅ **DeepSeek Chat** - $0.27 (80% cheaper than Claude, near-same quality!)
+- ✅ **Qwen Coder 32B** - $0.18 (Best coding model for price)
+- ✅ **Mistral Nemo** - $0.15 ($0.15, surprisingly capable!)
+- ✅ **Google Gemma 2** - $0.04 (Budget-friendly with good results)
+- ✅ **Microsoft Phi 3.5** - $0.02 (Extremely cheap for simple tasks)
 
 ---
 
