@@ -6,8 +6,11 @@
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-Enabled-success.svg)
 ![Status](https://img.shields.io/badge/status-production-ready-brightgreen.svg)
+![Telegram](https://img.shields.io/badge/telegram-enabled-success.svg)
 
-**Automatically selects the optimal OpenRouter model for every Hermes Agent task** ⚡
+**🎯 Automatically selects optimal, budget-friendly OpenRouter models for every Hermes Agent task!** ⚡
+
+**60-90% cheaper than premium models with excellent quality!** 💰
 
 </div>
 
@@ -15,7 +18,7 @@
 
 ## 🎯 What This Does
 
-Smartly routes your Hermes Agent tasks to the **right model** - focused on **excellent quality at 50-90% LESS cost** than premium models!
+Smartly routes your Hermes Agent tasks to the **right model** - focused on **excellent quality at 60-90% LESS cost** than premium models!
 
 | Task Type | Recommended Model | Cost (vs Claude) | Benefit |
 |-----------|------------------|------------------|---------|
@@ -39,7 +42,7 @@ Smartly routes your Hermes Agent tasks to the **right model** - focused on **exc
 
 ```bash
 # 1. Clone this repository
-git clone https://github.com/yourusername/hmr-model-router.git
+git clone https://github.com/jphermans/hmr-model-router.git
 cd hmr-model-router
 
 # 2. Make sure scripts are executable
@@ -52,6 +55,15 @@ echo $OPENROUTER_API_KEY
 ./hermes-model-router "Explain quantum physics simply"
 ```
 
+## 📱 Telegram Integration
+
+Use the model router with Telegram! See `TELEGRAM_GUIDE.md` for complete setup including:
+- Creating a Telegram bot with @BotFather
+- Configuring Hermes Telegram gateway
+- Using `/route` and `/auto` commands
+- Voice messages and image analysis
+- Expected costs: ~$15/month vs $200+ for premium
+
 ---
 
 ## 🛠️ Installation & Usage
@@ -60,65 +72,43 @@ echo $OPENROUTER_API_KEY
 
 ```bash
 # Add to your shell config
-echo 'export PATH="/path/to/hmr-model-router:$PATH"' >> ~/.bashrc
+echo 'export PATH="/home/jphermans/hmr-model-router:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # Now use from anywhere!
-hermes-router "Write a Python script"
-hermes-auto "Design a database schema"
+hermes-router "your task here"
+hermes-auto "Build a FastAPI API"
 ```
 
-### Option 2: Shell Aliases
-
-Add to `~/.bashrc` or `~/.zshrc`:
+### Option 2: Direct Script Usage
 
 ```bash
-# Model routing
-alias hermes-router='python3 /path/to/hmr-model-router/hermes-model-router'
-alias hermes-quick='HERMES_ROUTER_RUN=1 python3 /path/to/hmr-model-router/hermes-model-router'
-alias hermes-auto='/path/to/hmr-model-router/hermes-auto'
-alias hermes-show-models='python3 /path/to/hmr-model-router/show_openrouter_models.py'
+cd /home/jphermans/hmr-model-router
 
-source ~/.bashrc
-```
+# View recommendation (doesn't execute)
+./hermes-model-router "Write a Python script"
 
-### Mode 1: See Recommendation (No Execution)
-```bash
-./hermes-model-router "Build a microservices architecture"
+# Auto-execute
+./hermes-auto "Create a bash backup script"
 
-# Output:
-# === Model Selection Analysis ===
-# Task: Build a microservices architecture
-# Recommended Model: anthropic/claude-3.5-sonnet
-# Category: coding
-# Reason: Matched 3 keywords to coding model category
-# Confidence: 90%
-# Command: hermes chat -q -m anthropic/claude-3.5-sonnet "..."
-# =================================
-```
-
-### Mode 2: Auto-Execute
-```bash
-# Set HERMES_ROUTER_RUN=1 to run immediately
-HERMES_ROUTER_RUN=1 ./hermes-model-router "Create a bash backup script"
-```
-
-### Mode 3: Interactive Mode
-```bash
+# Interactive mode
 ./hermes-model-router -i
-
-# Enter tasks one at a time, auto-selects models
-Your task: Write a poem about AI
-# → Uses creative model
-
-Your task: Debug this Python error
-# → Uses coding model
 ```
 
-### Mode 4: Pipe Input
-```bash
-echo "Explain machine learning basics" | HERMES_ROUTER_RUN=1 ./hermes-model-router
-```
+---
+
+## 🎨 How It Works
+
+The router intelligently categorizes your task and selects the **best value model**:
+
+| Category | Models Used | Typical Use | Savings |
+|----------|-------------|-------------|---------|
+| **Small** | Microsoft Phi 3.5, Google Gemma 2 | Simple queries, fast tasks | 90%+ 💰 |
+| **Medium** | Qwen 2.5 72B, Mistral Nemo | General tasks, explanations | 60% 💰 |
+| **Large** | DeepSeek Chat, Qwen 2.5 72B | Complex reasoning | 70-80% 💰 |
+| **Coding** | Qwen Coder 32B, DeepSeek Coder | Programming | 85-90% 💰 |
+| **Creative** | Mistral Nemo, Qwen 2.5 72B | Writing, content | 60-70% 💰 |
+| **Analysis** | DeepSeek Chat, Qwen 2.5 72B | Data, math, reports | 70-80% 💰 |
 
 ---
 
@@ -128,12 +118,14 @@ echo "Explain machine learning basics" | HERMES_ROUTER_RUN=1 ./hermes-model-rout
 hmr-model-router/
 ├── README.md                 # This file
 ├── SETUP_GUIDE.md           # Detailed setup instructions
+├── BUDGET_UPDATE.md         # 🎉 Complete guide to new budget models!
+├── TELEGRAM_GUIDE.md        # 📱 Telegram integration guide
 ├── .gitignore               # Clean git ignore file
 │
-├── model_router.py          # Core routing logic (11KB)
-│   ├── MODEL_REGISTRY       # 6 smart categories
+├── model_router.py          # Core routing logic with budget optimization
+│   ├── MODEL_REGISTRY       # 6 smart categories with cheap models
 │   ├── analyze_task()       # Keyword analysis
-│   └── get_best_model()     # Model selection
+│   └── get_best_model()     # Budget model selection
 │
 ├── hermes-model-router      # Bash wrapper script
 ├── hermes-auto              # Auto-executing convenience
@@ -146,147 +138,80 @@ hmr-model-router/
 
 ---
 
-## ⚙️ How It Works
+## 🧪 Testing Budget Models
 
-### 1. Task Analysis
-The router analyzes your task using keyword patterns:
-
-```python
-task = "Build a FastAPI REST API"
-task_lower = task.lower()
-
-# Pattern matching scores categories
-if "build" in task_lower and "api" in task_lower:
-    score["coding"] += 1
-```
-
-### 2. Category Selection
-Based on scores, selects the best category:
-
-| Category | Keywords | Models |
-|----------|----------|--------|
-| **Small** | simple, fast, what's the | qwen3.5-flash |
-| **Medium** | summary, explain, guide | qwen3.5-235b |
-| **Large** | complex, advanced, system | claude-3.5-sonnet |
-| **Coding** | code, function, api | deepseek-coder |
-| **Creative** | write, story, blog | mistral-large |
-| **Analysis** | data, calculate, report | deepseek-chat |
-
-### 3. Model Selection
-Picks the optimal model with highest confidence.
-
----
-
-## 🎨 Customization
-
-### Add New Models
-
-Edit `model_router.py`:
-
-```python
-MODEL_REGISTRY = {
-    "coding": {
-        "models": [
-            "anthropic/claude-3.5-sonnet",
-            "your-preferred-model-here",  # Add here
-        ],
-        # ...
-    },
-    # ...
-}
-```
-
-### Add Custom Keywords
-
-```python
-"your-category": {
-    "use_cases": [
-        "existing-keyword",
-        "new-keyword-here",  # Add patterns here
-    ],
-}
-```
-
-### Modify Cost Tiers
-
-```python
-"cost_tier": "low"  # Options: low, medium, high
-```
-
----
-
-## 🔍 Available OpenRouter Models
-
-### View All Models
 ```bash
-python3 show_openrouter_models.py
-```
+# Simple task (should use cheap model)
+./hermes-model-router "What is 2+2?"
+# → microsoft/phi-3.5 or qwen2.5-coder-32b
 
-### Filter by Category
-```bash
-# Show coding models
-python3 show_openrouter_models.py coding
+# Coding task (should use coding model)
+./hermes-model-router "Write a Python function"
+# → qwen2.5-coder-32b
 
-# Show large models
-python3 show_openrouter_models.py large
+# Complex task (should use analysis model)
+./hermes-model-router "Design a microservices architecture"
+# → deepseek/deepseek-chat
 
-# Show small/cheap models
-python3 show_openrouter_models.py small
-```
-
-### Get Model Details
-```bash
-python3 show_openrouter_models.py anthropic/claude-3.5-sonnet
+# Creative task (should use creative model)
+./hermes-model-router "Write a blog post"
+# → qwen2.5-72b or mistral-nemo
 ```
 
 ---
 
 ## 📊 Cost Benefits
 
-### Typical Savings
+### Example Savings
 
-| Workflow | Single Model | With Router | Savings |
-|----------|-------------|-------------|---------|
-| 100 queries | All premium | Mixed models | 40-70% |
-| Mixed tasks | All `claude-3.5` | Auto-select | 50-60% |
-| Daily usage | 1 model | Optimal | 30-50% |
+| Task | Premium Model | Budget Model | Savings |
+|------|--------------|--------------|---------|
+| Simple query (200 tokens) | Claude Flash $0.002 | Microsoft Phi $0.00004 | **98% off!** |
+| Code generation (500 tokens) | GPT-4 $0.006 | Qwen Coder $0.0009 | **85% off!** |
+| Complex reasoning (1000 tokens) | Claude $0.007 | DeepSeek $0.0027 | **61% off!** |
+| Creative writing (1500 tokens) | Mistral Large $0.019 | Mistral Nemo $0.0022 | **88% off!** |
 
-### Example Cost Breakdown
+### Monthly Estimate
 
-```
-Simple query (200 tokens):
-  Single model approach: $0.002
-  Router (small model):  $0.0004
-  Savings: 80%
-
-Complex coding task (2000 tokens):
-  Single model (wrong):  $0.02
-  Router (optimal):      $0.014
-  Better quality:        ✅
-```
+| Usage | Premium ($/mo) | Budget ($/mo) | Savings |
+|-------|----------------|---------------|---------|
+| 10K tokens/day | $200-500 | $30-75 | **70-85%** |
+| 5K tokens/day | $100-250 | $15-40 | **70-85%** |
+| 1K tokens/day | $20-50 | $3-10 | **70-80%** |
 
 ---
 
-## 🧪 Testing
+## 🎯 Top Budget Models
 
-Run tests to see different scenarios:
+### 🥇 **DeepSeek Chat** ($0.27 / $1.10)
+- **Quality**: Near-Claude 3.5/4
+- **Best for**: Complex reasoning, coding, analysis, research
+- **Why**: Best AI in budget category!
 
-```bash
-# Simple factual query (should use small)
-./hermes-model-router "What is 2+2?"
+### 🥈 **Qwen 2.5 72B** ($0.55 / $1.10)
+- **Quality**: Excellent, near premium
+- **Best for**: General tasks, writing, math, multilingual
+- **Why**: Alibaba's flagship at amazing price!
 
-# Basic explanation (should use medium)
-./hermes-model-router "Explain photosynthesis"
+### 🥉 **Qwen Coder 32B** ($0.18 / $0.18)
+- **Quality**: Near GPT-4 for code
+- **Best for**: Programming, debugging, full-stack
+- **Why**: Best coding model for price!
 
-# Programming task (should use coding)
-./hermes-model-router "Write a Python function"
+### 💰 **Mistral Nemo** ($0.15 / $0.15)
+- **Quality**: Surprisingly good
+- **Best for**: Creative work, general tasks
+- **Why**: Very affordable with great results!
 
-# Creative writing (should use creative)
-./hermes-model-router "Write a short story"
+### 💡 **Google Gemma 2** ($0.04 / $0.10)
+- **Quality**: Good for budget
+- **Best for**: Simple tasks, summaries
+- **Why**: Extremely budget-friendly!
 
-# Complex system design (should use large)
-./hermes-model-router "Design a microservices architecture"
-```
+### ⚡ **Microsoft Phi 3.5** ($0.02 / $0.02)
+- **Quality**: Surprisingly capable
+- **Best for**: Simple queries, quick facts
+- **Why**: Ultra-cheap and fast!
 
 ---
 
@@ -304,25 +229,25 @@ Run tests to see different scenarios:
 Contributions welcome! Here's how:
 
 1. **Fork** this repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to branch (`git push origin feature/amazing-feature`)
+2. **Create** a feature branch (`git checkout -b feature/budget-models`)
+3. **Commit** changes (`git commit -m 'Add cheaper model'`)
+4. **Push** to branch (`git push origin feature/budget-models`)
 5. **Open** a Pull Request
 
 ### Areas for Improvement
-
-- Add ML-based routing (learning from user preferences)
-- Integrate with OpenRouter usage analytics
-- Add cost tracking and reporting
-- Support local LLMs (Ollama, llama.cpp)
-- Add multi-model parallel execution
-- Create web dashboard for settings
+- Add more budget models categories
+- Improve routing accuracy
+- Add usage analytics
+- Support local models (Ollama, llama.cpp)
+- Create mobile app for Telegram integration
 
 ---
 
 ## 📚 Documentation
 
-- **Full Setup Guide**: See `SETUP_GUIDE.md` for detailed installation and usage
+- **Full Setup Guide**: See `SETUP_GUIDE.md` for detailed installation
+- **Budget Update Guide**: See `BUDGET_UPDATE.md` for complete model comparison
+- **Telegram Integration**: See `TELEGRAM_GUIDE.md` for bot setup
 - **Skill Documentation**: `~/.hermes/skills/model-router/SKILL.md`
 - **OpenRouter Models**: `./show_openrouter_models.py`
 
@@ -330,7 +255,18 @@ Contributions welcome! Here's how:
 
 ## 🔄 Version History
 
-- **v1.0.0** (Initial Release)
+- **v1.1.0** (Current) - Budget-optimized models, 60-90% cheaper!
+  - ✅ Added DeepSeek Chat ($0.27) - Best value!
+  - ✅ Added Qwen Coder 32B ($0.18) - Coding specialist!
+  - ✅ Added Mistral Nemo ($0.15) - Great value!
+  - ✅ Added Microsoft Phi 3.5 ($0.02) - Super cheap!
+  - ✅ Added Google Gemma 2 ($0.04) - Budget-friendly!
+  - ✅ Updated README with budget focus
+  - ✅ Added BUDGET_UPDATE.md guide
+  - ✅ Added TELEGRAM_GUIDE.md
+  - ✅ Telegram integration support
+
+- **v1.0.0** (Initial) - Original model routing
   - ✅ Keyword-based model routing
   - ✅ 6 smart categories
   - ✅ Bash wrapper scripts
@@ -341,21 +277,11 @@ Contributions welcome! Here's how:
 
 ## 💡 Troubleshooting
 
-### Command Not Found
-```bash
-# Make sure scripts are executable
-chmod +x /path/to/hmr-model-router/hermes-model-router
-chmod +x /path/to/hmr-model-router/hermes-auto
-
-# Or add to PATH
-export PATH="/path/to/hmr-model-router:$PATH"
-```
-
-### Wrong Model Selected
-Check the routing output:
+### Model Not Selected Expected
+The routing is keyword-based. Check the output to see why:
 ```bash
 ./hermes-model-router "your task"
-# Look at "Reason" field to understand why
+# Look at "Reason" field to understand selection
 ```
 
 Add more keywords to the appropriate category in `model_router.py`.
@@ -369,24 +295,33 @@ echo $OPENROUTER_API_KEY
 grep OPENROUTER ~/.hermes/.env
 ```
 
+### Commands Not Found
+Make sure scripts are executable:
+```bash
+chmod +x /home/jphermans/hmr-model-router/hermes-model-router
+chmod +x /home/jphermans/hmr-model-router/hermes-auto
+```
+
 ---
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/hmr-model-router&type=Date)](https://star-history.com/#yourusername/hmr-model-router&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=jphermans/hmr-model-router&type=Date)](https://star-history.com/#jphermans/hmr-model-router&Date)
 
 ---
 
 ## 📄 License
 
-MIT License - feel free to use, modify, and distribute!
+MIT License - feel free to use, modify, and distribute with attribution!
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for the Hermes Agent community**
+**💰 Save 60-90% on AI costs with excellent quality!**
 
-⭐ Star this repo if it helps you!
+**🤖 Made with ❤️ for the Hermes Agent community**
+
+⭐ Star this repo if it helps you save money!
 
 </div>
