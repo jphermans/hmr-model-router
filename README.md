@@ -182,6 +182,68 @@ hmr-model-router/
 ---
 
 ## 🎯 Top Budget Models
+**Updated: 2026-05-15 | 364 models analyzed**
+
+### 🥇 **Microsoft Phi 3.5** ($0.02 / $0.03)
+- **Quality**: Surprisingly capable
+- **Best for**: Simple queries, quick facts
+- **Why**: Ultra-cheap and fast! Best for basic tasks!
+
+### 🥈 **IBM Granite 4.0 Micro** ($0.02 / $0.11)
+- **Quality**: Good for simple tasks
+- **Best for**: Basic reasoning, summaries
+- **Why**: 80% cheaper than premium models!
+
+### 🥉 **Mistral Nemo** ($0.02 / $0.03)
+- **Quality**: Excellent all-rounder
+- **Best for**: General tasks, creative work
+- **Why**: Amazing value at 2 cents!
+
+### 💰 **Google Gemma 2** ($0.04 / $0.10)
+- **Quality**: Good for budget
+- **Best for**: Simple tasks, summaries
+- **Why**: Extremely budget-friendly!
+
+### 🌟 **DeepSeek Chat** ($0.12 / $0.35)
+- **Quality**: Near-Claude 3.5/4
+- **Best for**: Complex reasoning, coding, analysis, research
+- **Why**: Best AI in budget category!
+
+### 💡 **Qwen 2.5 72B** ($0.55 / $1.10)
+- **Quality**: Excellent, near premium
+- **Best for**: General tasks, writing, math, multilingual
+- **Why**: Alibaba's flagship at amazing price!
+
+### 💻 **Qwen Coder 32B** ($0.18 / $0.18)
+- **Quality**: Near GPT-4 for code
+- **Best for**: Programming, debugging, full-stack
+- **Why**: Best coding model for price!
+
+---
+
+## 💰 Current Pricing Statistics
+
+| Category | Models | Price Range |
+|----------|--------|-------------|
+| Under 10¢ | 346 models | $0.01-$0.09 |
+| 10-50¢ | 17 models | $0.10-$0.50 |
+| $0.50-1 | 0 models | $0.50-$1.00 |
+| Over $1 | 1 model | $1.00+ |
+
+### 🔥 Top 10 Cheapest Models (Input)
+
+1. **IBM: Granite 4.0 Micro** - $0.02/1M input, $0.11/1M output
+2. **Meta: Llama 3.1 8B Instruct** - $0.02/1M input, $0.05/1M output
+3. **Mistral: Mistral Nemo** - $0.02/1M input, $0.03/1M output
+4. **Meta: Llama 3.2 1B Instruct** - $0.03/1M input, $0.20/1M output
+5. **LiquidAI: LFM2-24B-A2B** - $0.03/1M input, $0.12/1M output
+6. **OpenAI: gpt-oss-20b** - $0.03/1M input, $0.14/1M output
+7. **Google: Gemma 2 9B** - $0.04/1M input, $0.08/1M output
+8. **Anthropic: Claude 3 Haiku** - $0.25/1M input, $1.25/1M output
+9. **OpenAI: GPT-4o** - $5.00/1M input, $15.00/1M output
+10. **Anthropic: Claude 3 Opus** - $5.00/1M input, $25.00/1M output
+
+---
 
 ### 🥇 **DeepSeek Chat** ($0.27 / $1.10)
 - **Quality**: Near-Claude 3.5/4
