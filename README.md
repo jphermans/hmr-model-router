@@ -326,7 +326,17 @@ Contributions welcome! Here's how:
 
 ## 🔄 Version History
 
-- **v1.1.0** (Current) - Budget-optimized models, 60-90% cheaper!
+- **v1.2.0** (Current) - **Cost tracking & monitoring added**!
+  - ✅ Automatic cost tracking for every response
+  - ✅ Display model info, costs, and 7-day summary after each response
+  - ✅ Usage log at `~/.hermes/usage_log.json`
+  - ✅ Real-time pricing from OpenRouter API (cached 24h)
+  - ✅ Terminal and Telegram support
+  - ✅ Added BUDGET_UPDATE.md guide
+  - ✅ Added TELEGRAM_GUIDE.md
+  - ✅ Telegram integration support
+
+- **v1.1.0** - Budget-optimized models, 60-90% cheaper!
   - ✅ Added DeepSeek Chat ($0.27) - Best value!
   - ✅ Added Qwen Coder 32B ($0.18) - Coding specialist!
   - ✅ Added Mistral Nemo ($0.15) - Great value!
@@ -343,6 +353,80 @@ Contributions welcome! Here's how:
   - ✅ Bash wrapper scripts
   - ✅ Model catalog viewer
   - ✅ Full documentation
+
+---
+
+## 📊 Cost Tracking & Monitoring
+
+**NEW!** Automatic cost tracking for every response - see exactly how much each interaction costs!
+
+### Quick Stats (Live)
+After every response, you'll see:
+```
+📊 **Model Info & Costs**
+   Model: qwen/qwen3.5-flash-02-23
+   Tokens: 800 input / 1,200 output (2,000 total)
+   Rate:   $0.18 per 1M tokens (input) / $0.28 per 1M tokens (output)
+   Cost:   $0.000480 USD (estimated)
+
+📈 **7-Day Summary**
+   Total responses:      2
+   Total cost:           $0.000940 USD
+   Total tokens:         4,000 tokens
+   Models used:          qwen/qwen3.5-flash-02-23
+```
+
+### How It Works
+- ✅ **Automatic logging** - Every response tracked to `~/.hermes/usage_log.json`
+- ✅ **Real-time pricing** - Fetched from OpenRouter API, cached for 24h
+- ✅ **Cost calculation** - Based on actual OpenRouter pricing per model
+- ✅ **Display support** - Works in both terminal and Telegram
+
+### Monitoring Commands
+```bash
+# View usage log
+cat ~/.hermes/usage_log.json
+
+# Check 7-day summary
+python ~/.hermes/scripts/response_cost_tracker.py
+
+# Force pricing refresh
+rm ~/.hermes/pricing_cache.json
+
+# Export to CSV for analysis
+cat ~/.hermes/usage_log.json | jq -r '.[] | [.timestamp, .model, .cost_usd] | @csv' > usage.csv
+```
+
+### Cost Optimization Tips
+1. **Use budget models** for 60-80% of simple queries (saves 40-70%)
+2. **Reserve premium models** for complex reasoning only
+3. **Monitor weekly** - Check `~/.hermes/usage_log.json` for spending patterns
+4. **Set budget alerts** - Track when monthly costs exceed your target
+
+### Current Model Pricing (OpenRouter)
+| Model | Input | Output | Best For | Savings vs Premium |
+|-------|-------|--------|----------|-------------------|
+| `microsoft/phi-3.5` | $0.02 | $0.03 | Simple queries | **98%** |
+| `mistralai/mistral-nemo` | $0.02 | $0.03 | General tasks | **96%** |
+| `qwen/qwen3.5-flash-02-23` | $0.18 | $0.28 | Current default | **90%** |
+| `deepseek/deepseek-chat` | $0.27 | $1.10 | Analysis | **85%** |
+| `qwen/qwen-2.5-72b` | $0.55 | $1.10 | Complex reasoning | **80%** |
+| `anthropic/claude-3.5-sonnet` | $3.00 | $15.00 | Premium quality | Baseline |
+
+**Example:** A 2000 token conversation with budget model costs ~$0.0005 vs ~$0.009 with premium!
+
+### Getting Exact Token Counts
+For precise tracking with actual token counts from OpenRouter responses:
+
+```bash
+# Set your API key
+export OPENROUTER_API_KEY=sk-or-...
+
+# Use the detailed tracker
+python ~/.hermes/scripts/cost_tracker_real.py
+```
+
+**Note:** Hermes Agent CLI doesn't expose exact token counts, so estimates are used. For API-level tracking, use the OpenRouter Dashboard at https://openrouter.ai/dashboard/usage
 
 ---
 
