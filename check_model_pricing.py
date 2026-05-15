@@ -59,7 +59,14 @@ def analyze_models(models):
         })
     
     # Filter to models with valid pricing
-    priced_models = [m for m in normalized if m["input_price_per_1m"] is not None and m["output_price_per_1m"] is not None]
+    # Exclude router models with negative or invalid pricing
+    priced_models = [
+        m for m in normalized 
+        if m["input_price_per_1m"] is not None 
+        and m["output_price_per_1m"] is not None
+        and m["input_price_per_1m"] > 0
+        and m["output_price_per_1m"] > 0
+    ]
     
     # Find cheapest by input price
     cheapest_input = sorted(priced_models, key=lambda x: x["input_price_per_1m"] or float('inf'))[:10]
@@ -67,10 +74,10 @@ def analyze_models(models):
     # Find cheapest by output price
     cheapest_output = sorted(priced_models, key=lambda x: x["output_price_per_1m"] or float('inf'))[:10]
     
-    # Find best value under $0.50 per 1M input and $1.00 output
-    under_50 = [m for m in priced_models if m["input_price_per_1m"] < 50 and m["output_price_per_1m"] < 100]
+    # Find best value - cheapest models under $0.50 input
+    under_50 = [m for m in priced_models if m["input_price_per_1m"] < 50]
     best_value = sorted(under_50, 
-                       key=lambda x: x["input_price_per_1m"] + x["output_price_per_1m"])[-20:]
+                       key=lambda x: x["input_price_per_1m"])[:20]  # First 20 cheapest
     
     # Group by price tier
     tiers = {
@@ -109,6 +116,49 @@ def format_price(price):
     return f"${price:.2f}"
 
 
+def get_model_use_case(model_id):
+    """Recommended use case based on model ID."""
+    model_lower = model_id.lower()
+    
+    # Coding models
+    if "coder" in model_lower or "deepseek-coder" in model_lower:
+        return "📝 Coding & programming tasks"
+    
+    # IBM & Llama - general purpose
+    if "granite" in model_lower or "llama" in model_lower:
+        return "🤖 General chat & simple tasks"
+    
+    # Mistral
+    if "mistral" in model_lower:
+        return "✨ Balanced performance"
+    
+    # Gemma
+    if "gemma" in model_lower:
+        return "📚 Summaries & explanations"
+    
+    # Phi
+    if "phi" in model_lower:
+        return "⚡ Fast simple queries"
+    
+    # DeepSeek
+    if "deepseek" in model_lower:
+        return "🧠 Complex reasoning & analysis"
+    
+    # Qwen
+    if "qwen" in model_lower:
+        return "💡 General tasks & multilingual"
+    
+    # Anthropic Claude
+    if "claude" in model_lower:
+        return "🏆 Premium quality"
+    
+    # OpenAI GPT
+    if "gpt" in model_lower:
+        return "🌟 High quality general use"
+    
+    return "📝 Good for general tasks"
+
+
 def print_report(analysis):
     """Print human-readable report."""
     print("\n" + "="*80)
@@ -122,9 +172,11 @@ def print_report(analysis):
     
     print(f"\n💰 Top 10 Cheapest Input:")
     for i, m in enumerate(analysis["cheapest_input"][:10], 1):
+        usage = get_model_use_case(m['id'])
         print(f"  {i}. {m['name'][:50]}")
         print(f"     Input: {format_price(m['input_price_per_1m'])}/1M |")
         print(f"     Output: {format_price(m['output_price_per_1m'])}/1M")
+        print(f"     💡 Best for: {usage}")
     
     print(f"\n⭐ Best Value (under $0.50 input):")
     for m in analysis["best_value_under_50_cents"][:10]:
@@ -220,13 +272,15 @@ def get_telegram_summary(current_analysis, previous_data=None):
 """
     
     for i, m in enumerate(top3, 1):
-        telegram_msg += f"{i}. {m['name'][:50]:<50} ${m['input_price_per_1m']:.2f}/1M tokens\n"
+        usage = get_model_use_case(m["id"])
+        telegram_msg += f"{i}. {m['name'][:40]:<40} ${m['input_price_per_1m']:.2f}/M\n   💡 {usage}\n"
     
     telegram_msg += "\n⭐ Best Value (under $0.50):\n"
     for m in best_value:
-        telegram_msg += f"• {m['name'][:50]:<50} ${m['input_price_per_1m']:.2f}/${m['output_price_per_1m']:.2f}\n"
+        usage = get_model_use_case(m["id"])[:30]
+        telegram_msg += f"• {m['name'][:40]:<40} ${m['input_price_per_1m']:.2f}/${m['output_price_per_1m']:.2f} ({usage})\n"
     
-    telegram_msg += "\n📁 Full data: `~/.hermes/hmr-model-router/.data/model-pricing.json`"
+    telegram_msg += "\n📁 Full data: `.data/model-pricing.json`"
     
     return telegram_msg.strip()
 

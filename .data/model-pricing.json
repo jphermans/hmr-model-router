@@ -1,25 +1,10 @@
 {
-  "last_updated": "2026-05-15T03:55:09.487594+00:00",
-  "generated_at": "2026-05-15 03:55:09 UTC",
+  "last_updated": "2026-05-15T03:59:51.035755+00:00",
+  "generated_at": "2026-05-15 03:59:51 UTC",
   "analysis": {
     "total_models": 364,
-    "priced_models": 364,
+    "priced_models": 332,
     "cheapest_input": [
-      {
-        "model": "openrouter/pareto-code",
-        "name": "Pareto Code Router",
-        "price_per_1m": -1000000.0
-      },
-      {
-        "model": "openrouter/bodybuilder",
-        "name": "Body Builder (beta)",
-        "price_per_1m": -1000000.0
-      },
-      {
-        "model": "openrouter/auto",
-        "name": "Auto Router",
-        "price_per_1m": -1000000.0
-      },
       {
         "model": "inclusionai/ling-2.6-flash",
         "name": "inclusionAI: Ling-2.6-flash",
@@ -54,132 +39,147 @@
         "model": "openai/gpt-oss-20b",
         "name": "OpenAI: gpt-oss-20b",
         "price_per_1m": 0.03
+      },
+      {
+        "model": "amazon/nova-micro-v1",
+        "name": "Amazon: Nova Micro 1.0",
+        "price_per_1m": 0.035
+      },
+      {
+        "model": "cohere/command-r7b-12-2024",
+        "name": "Cohere: Command R7B (12-2024)",
+        "price_per_1m": 0.0375
+      },
+      {
+        "model": "openai/gpt-oss-120b",
+        "name": "OpenAI: gpt-oss-120b",
+        "price_per_1m": 0.039
       }
     ],
     "best_value_under_50_cents": [
       {
-        "model": "openai/gpt-5-image",
-        "name": "OpenAI: GPT-5 Image",
-        "input_per_1m": 10.0,
-        "output_per_1m": 10.0
+        "model": "inclusionai/ling-2.6-flash",
+        "name": "inclusionAI: Ling-2.6-flash",
+        "input_per_1m": 0.01,
+        "output_per_1m": 0.03
       },
       {
-        "model": "openai/gpt-4o-2024-05-13",
-        "name": "OpenAI: GPT-4o (2024-05-13)",
-        "input_per_1m": 5.0,
-        "output_per_1m": 15.0
+        "model": "ibm-granite/granite-4.0-h-micro",
+        "name": "IBM: Granite 4.0 Micro",
+        "input_per_1m": 0.017,
+        "output_per_1m": 0.11
       },
       {
-        "model": "openai/gpt-5.4-image-2",
-        "name": "OpenAI: GPT-5.4 Image 2",
-        "input_per_1m": 8.0,
-        "output_per_1m": 15.0
+        "model": "meta-llama/llama-3.1-8b-instruct",
+        "name": "Meta: Llama 3.1 8B Instruct",
+        "input_per_1m": 0.02,
+        "output_per_1m": 0.049999999999999996
       },
       {
-        "model": "~anthropic/claude-opus-latest",
-        "name": "Anthropic: Claude Opus Latest",
-        "input_per_1m": 5.0,
-        "output_per_1m": 25.0
+        "model": "mistralai/mistral-nemo",
+        "name": "Mistral: Mistral Nemo",
+        "input_per_1m": 0.02,
+        "output_per_1m": 0.03
       },
       {
-        "model": "anthropic/claude-opus-4.7",
-        "name": "Anthropic: Claude Opus 4.7",
-        "input_per_1m": 5.0,
-        "output_per_1m": 25.0
+        "model": "meta-llama/llama-3.2-1b-instruct",
+        "name": "Meta: Llama 3.2 1B Instruct",
+        "input_per_1m": 0.027,
+        "output_per_1m": 0.19999999999999998
       },
       {
-        "model": "anthropic/claude-opus-4.6",
-        "name": "Anthropic: Claude Opus 4.6",
-        "input_per_1m": 5.0,
-        "output_per_1m": 25.0
+        "model": "liquid/lfm-2-24b-a2b",
+        "name": "LiquidAI: LFM2-24B-A2B",
+        "input_per_1m": 0.03,
+        "output_per_1m": 0.12
       },
       {
-        "model": "anthropic/claude-opus-4.5",
-        "name": "Anthropic: Claude Opus 4.5",
-        "input_per_1m": 5.0,
-        "output_per_1m": 25.0
+        "model": "openai/gpt-oss-20b",
+        "name": "OpenAI: gpt-oss-20b",
+        "input_per_1m": 0.03,
+        "output_per_1m": 0.14
       },
       {
-        "model": "openai/gpt-chat-latest",
-        "name": "OpenAI: GPT Chat Latest",
-        "input_per_1m": 5.0,
-        "output_per_1m": 30.0
+        "model": "amazon/nova-micro-v1",
+        "name": "Amazon: Nova Micro 1.0",
+        "input_per_1m": 0.035,
+        "output_per_1m": 0.14
       },
       {
-        "model": "~openai/gpt-latest",
-        "name": "OpenAI GPT Latest",
-        "input_per_1m": 5.0,
-        "output_per_1m": 30.0
+        "model": "cohere/command-r7b-12-2024",
+        "name": "Cohere: Command R7B (12-2024)",
+        "input_per_1m": 0.0375,
+        "output_per_1m": 0.15
       },
       {
-        "model": "openai/gpt-5.5",
-        "name": "OpenAI: GPT-5.5",
-        "input_per_1m": 5.0,
-        "output_per_1m": 30.0
+        "model": "openai/gpt-oss-120b",
+        "name": "OpenAI: gpt-oss-120b",
+        "input_per_1m": 0.039,
+        "output_per_1m": 0.18
       },
       {
-        "model": "openai/gpt-4-turbo",
-        "name": "OpenAI: GPT-4 Turbo",
-        "input_per_1m": 10.0,
-        "output_per_1m": 30.0
+        "model": "qwen/qwen3.5-9b",
+        "name": "Qwen: Qwen3.5-9B",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.15
       },
       {
-        "model": "openai/gpt-4-turbo-preview",
-        "name": "OpenAI: GPT-4 Turbo Preview",
-        "input_per_1m": 10.0,
-        "output_per_1m": 30.0
+        "model": "nvidia/nemotron-nano-9b-v2",
+        "name": "NVIDIA: Nemotron Nano 9B V2",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.16
       },
       {
-        "model": "openai/gpt-4-1106-preview",
-        "name": "OpenAI: GPT-4 Turbo (older v1106)",
-        "input_per_1m": 10.0,
-        "output_per_1m": 30.0
+        "model": "google/gemma-3-4b-it",
+        "name": "Google: Gemma 3 4B",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.08
       },
       {
-        "model": "openai/o3-deep-research",
-        "name": "OpenAI: o3 Deep Research",
-        "input_per_1m": 10.0,
-        "output_per_1m": 40.0
+        "model": "google/gemma-3-12b-it",
+        "name": "Google: Gemma 3 12B",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.13
       },
       {
-        "model": "openai/o1",
-        "name": "OpenAI: o1",
-        "input_per_1m": 15.0,
-        "output_per_1m": 60.0
+        "model": "qwen/qwen-2.5-7b-instruct",
+        "name": "Qwen: Qwen2.5 7B Instruct",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.09999999999999999
       },
       {
-        "model": "anthropic/claude-opus-4.1",
-        "name": "Anthropic: Claude Opus 4.1",
-        "input_per_1m": 15.0,
-        "output_per_1m": 75.0
+        "model": "sao10k/l3-lunaris-8b",
+        "name": "Sao10K: Llama 3 8B Lunaris",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.049999999999999996
       },
       {
-        "model": "anthropic/claude-opus-4",
-        "name": "Anthropic: Claude Opus 4",
-        "input_per_1m": 15.0,
-        "output_per_1m": 75.0
+        "model": "meta-llama/llama-3-8b-instruct",
+        "name": "Meta: Llama 3 8B Instruct",
+        "input_per_1m": 0.04,
+        "output_per_1m": 0.04
       },
       {
-        "model": "openai/gpt-4-0314",
-        "name": "OpenAI: GPT-4 (older v0314)",
-        "input_per_1m": 30.0,
-        "output_per_1m": 60.0
+        "model": "arcee-ai/trinity-mini",
+        "name": "Arcee AI: Trinity Mini",
+        "input_per_1m": 0.045,
+        "output_per_1m": 0.15
       },
       {
-        "model": "openai/gpt-4",
-        "name": "OpenAI: GPT-4",
-        "input_per_1m": 30.0,
-        "output_per_1m": 60.0
+        "model": "ibm-granite/granite-4.1-8b",
+        "name": "IBM: Granite 4.1 8B",
+        "input_per_1m": 0.049999999999999996,
+        "output_per_1m": 0.09999999999999999
       },
       {
-        "model": "openai/o3-pro",
-        "name": "OpenAI: o3 Pro",
-        "input_per_1m": 20.0,
-        "output_per_1m": 80.0
+        "model": "nvidia/nemotron-3-nano-30b-a3b",
+        "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
+        "input_per_1m": 0.049999999999999996,
+        "output_per_1m": 0.19999999999999998
       }
     ],
     "tiers": {
-      "under_10_cents": 346,
+      "under_10_cents": 314,
       "10_to_50_cents": 17,
       "50_cents_to_1_dollar": 0,
       "above_1_dollar": 1
