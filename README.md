@@ -316,9 +316,10 @@ Contributions welcome! Here's how:
 
 ## 📚 Documentation
 
-- **Full Setup Guide**: See `SETUP_GUIDE.md` for detailed installation
-- **Budget Update Guide**: See `BUDGET_UPDATE.md` for complete model comparison
-- **Telegram Integration**: See `TELEGRAM_GUIDE.md` for bot setup
+- **Cost Tracking Guide**: 📊 `COST_TRACKING.md` - Detailed cost monitoring and optimization
+- **Full Setup Guide**: `SETUP_GUIDE.md` - Detailed installation instructions
+- **Budget Update Guide**: `BUDGET_UPDATE.md` - Complete model comparison
+- **Telegram Integration**: `TELEGRAM_GUIDE.md` - Bot setup guide
 - **Skill Documentation**: `~/.hermes/skills/model-router/SKILL.md`
 - **OpenRouter Models**: `./show_openrouter_models.py`
 
