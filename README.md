@@ -223,6 +223,8 @@ hmr-model-router/
 
 ## 💰 Current Pricing Statistics
 
+**Updated: 2026-05-15 | 364 models analyzed**
+
 | Category | Models | Price Range |
 |----------|--------|-------------|
 | Under 10¢ | 346 models | $0.01-$0.09 |
@@ -230,18 +232,25 @@ hmr-model-router/
 | $0.50-1 | 0 models | $0.50-$1.00 |
 | Over $1 | 1 model | $1.00+ |
 
-### 🔥 Top 10 Cheapest Models (Input)
+### 🔥 Top 10 Cheapest Models (Per 1M tokens)
 
-1. **IBM: Granite 4.0 Micro** - $0.02/1M input, $0.11/1M output
-2. **Meta: Llama 3.1 8B Instruct** - $0.02/1M input, $0.05/1M output
-3. **Mistral: Mistral Nemo** - $0.02/1M input, $0.03/1M output
-4. **Meta: Llama 3.2 1B Instruct** - $0.03/1M input, $0.20/1M output
-5. **LiquidAI: LFM2-24B-A2B** - $0.03/1M input, $0.12/1M output
-6. **OpenAI: gpt-oss-20b** - $0.03/1M input, $0.14/1M output
-7. **Google: Gemma 2 9B** - $0.04/1M input, $0.08/1M output
-8. **Anthropic: Claude 3 Haiku** - $0.25/1M input, $1.25/1M output
-9. **OpenAI: GPT-4o** - $5.00/1M input, $15.00/1M output
-10. **Anthropic: Claude 3 Opus** - $5.00/1M input, $25.00/1M output
+1️⃣ **IBM: Granite 4.0 Micro** - $0.02 / $0.11
+2️⃣ **Meta: Llama 3.1 8B Instruct** - $0.02 / $0.05
+3️⃣ **Mistral: Mistral Nemo** - $0.02 / $0.03
+4️⃣ **Meta: Llama 3.2 1B Instruct** - $0.03 / $0.20
+5️⃣ **LiquidAI: LFM2-24B-A2B** - $0.03 / $0.12
+6️⃣ **OpenAI: gpt-oss-20b** - $0.03 / $0.14
+7️⃣ **Google: Gemma 2 9B** - $0.04 / $0.08
+8️⃣ **Anthropic: Claude 3 Haiku** - $0.25 / $1.25
+9️⃣ **OpenAI: GPT-4o** - $5.00 / $15.00
+🔟 **Anthropic: Claude 3 Opus** - $5.00 / $25.00
+
+### 💡 Best Value Recommendations
+
+- **Simple Tasks**: Microsoft Phi 3.5 at just **$0.02**/1M tokens!
+- **General Chat**: Mistral Nemo at **$0.02**/1M input
+- **Coding**: Qwen Coder 32B at **$0.18**/1M tokens
+- **Complex Reasoning**: DeepSeek Chat at **$0.12**/1M tokens (80% cheaper than Claude!)
 
 ---
 
