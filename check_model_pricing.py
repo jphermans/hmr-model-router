@@ -196,7 +196,12 @@ def save_to_file(analysis, repo_path):
             "total_models": analysis["total_models"],
             "priced_models": analysis["priced_models"],
             "cheapest_input": [
-                {"model": m["id"], "name": m["name"], "price_per_1m": m["input_price_per_1m"]}
+                {
+                    "model": m["id"],
+                    "name": m["name"],
+                    "input_price_per_1m": m["input_price_per_1m"],
+                    "output_price_per_1m": m["output_price_per_1m"]
+                }
                 for m in analysis["cheapest_input"]
             ],
             "best_value_under_50_cents": [

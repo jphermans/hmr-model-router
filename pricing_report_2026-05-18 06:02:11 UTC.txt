@@ -1,0 +1,126 @@
+═══════════════════════════════════════════════════════════
+💰 OPENROUTER ACCOUNT STATUS
+═══════════════════════════════════════════════════════════
+
+⚠️  **Balance API Limitation**
+
+OpenRouter's balance and detailed usage API is not publicly 
+accessible. To check your balance, please visit:
+
+🔗 **https://openrouter.ai/your-settings/billing**
+
+💡 Your balance will be shown in EUR as well:
+   €X.XX = $X.XX (USD)
+
+═══════════════════════════════════════════════════════════
+💵 SPENDING SUMMARY (Last 7 Days)
+═══════════════════════════════════════════════════════════
+
+**Total Spent:**
+   • $0.008598 USD
+   • €0.008036 EUR
+   • Daily Average: $0.001228 ($0.001148 EUR)
+
+**Usage Statistics:**
+   • Total Requests: 17
+   • Total Tokens: 36,600
+   • Models Used: 1
+
+**Most Used Models:**
+   • qwen/qwen3.5-flash-02-23
+      • 17 requests, $0.008598 (0.008036€)
+═══════════════════════════════════════════════════════════
+📊 COST OPTIMIZATION OPPORTUNITIES
+═══════════════════════════════════════════════════════════
+
+**Current Routing Analysis**
+   You're using: qwen/qwen3.5-flash-02-23
+   Current rate: $0.18/1M tokens (if found)
+
+**Top 3 Cheapest Models (similar capabilities):**
+
+   1. inclusionAI: Ling-2.6-flash                        $0.01/1M input
+   2. IBM: Granite 4.0 Micro                             $0.02/1M input
+   3. Meta: Llama 3.1 8B Instruct                        $0.02/1M input
+**Potential Savings Analysis:**
+   • Current rate: $0.1800/1M tokens
+   • Cheapest rate: $0.0100/1M tokens
+   • Potential savings: 94.4%
+   • Estimated monthly savings: $0.0348
+
+**Recommendation:**
+   ⚡  **HIGH PRIORITY** - Significant savings available!
+   Consider switching to cheaper models for simple tasks.
+   Your current route is: NEEDS IMPROVEMENT
+═══════════════════════════════════════════════════════════
+🆕 BEST VALUE MODELS THIS WEEK
+═══════════════════════════════════════════════════════════
+
+1. **inclusionAI: Ling-2.6-flash**
+   • Input: $0.01/1M
+   • Output: $0.03/1M
+   • Best for: Good quality/price balance
+2. **IBM: Granite 4.0 Micro**
+   • Input: $0.02/1M
+   • Output: $0.11/1M
+   • Best for: Good quality/price balance
+3. **Meta: Llama 3.1 8B Instruct**
+   • Input: $0.02/1M
+   • Output: $0.05/1M
+   • Best for: Good quality/price balance
+4. **Mistral: Mistral Nemo**
+   • Input: $0.02/1M
+   • Output: $0.03/1M
+   • Best for: Good quality/price balance
+5. **Meta: Llama 3.2 1B Instruct**
+   • Input: $0.03/1M
+   • Output: $0.20/1M
+   • Best for: Good quality/price balance
+═══════════════════════════════════════════════════════════
+🔍 DETAILED PRICING COMPARISON (Top 10 Cheapest)
+═══════════════════════════════════════════════════════════
+
+| # | Model | Input ($/1M) | Output ($/1M) |
+|---|-------|--------------|---------------|
+| 1 | inclusionAI: Ling-2.6-flash    | $0.01 | $0.03|
+| 2 | IBM: Granite 4.0 Micro         | $0.02 | $0.11|
+| 3 | Meta: Llama 3.1 8B Instruct    | $0.02 | $0.05|
+| 4 | Mistral: Mistral Nemo          | $0.02 | $0.03|
+| 5 | Meta: Llama 3.2 1B Instruct    | $0.03 | $0.20|
+| 6 | LiquidAI: LFM2-24B-A2B         | $0.03 | $0.12|
+| 7 | OpenAI: gpt-oss-20b            | $0.03 | $0.14|
+| 8 | Amazon: Nova Micro 1.0         | $0.04 | $0.14|
+| 9 | Cohere: Command R7B (12-2024)  | $0.04 | $0.15|
+| 10 | OpenAI: gpt-oss-120b           | $0.04 | $0.18|
+
+═══════════════════════════════════════════════════════════
+📊 PRICING TIER DISTRIBUTION
+══════════════════════════════════════════════════════════===
+
+Total OpenRouter Models: 356
+Models with valid pricing: 325
+
+Price Tiers:
+   • Under 10¢/1M:         307 models
+   • 10-50¢/1M:            17 models  
+   • $0.50-$1/1M:          0 models
+   • Over $1/1M:           1 models
+
+💡 **Key Insight:** 307 models (94.5% of priced models) cost less than 10¢ per 1M tokens!
+
+═══════════════════════════════════════════════════════════
+✅ ACTIONS COMPLETED
+═══════════════════════════════════════════════════════════
+
+✓ All pricing data collected from OpenRouter API
+✓ Usage data analyzed from local log
+✓ Balance check attempted (manual URL provided)
+✓ Cost analysis completed with EUR conversion
+✓ Report generated at 2026-05-18 06:02:11 UTC
+✓ .data/model-pricing.json updated
+
+───────────────────────────────────────────────────────────
+Run daily at 4:00 AM UTC for continuous monitoring
+API Limitation: Balance/usage APIs not publicly accessible
+Manual Check: https://openrouter.ai/your-settings/billing
+───────────────────────────────────────────────────────────
